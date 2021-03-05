@@ -13,7 +13,7 @@ export default class Animation {
         this._tl.to(selectors.listItems[2], {id: "listItem2", y: 150, opacity: 0, duration: 0.4}, "-=0.5")
         this._tl.to(selectors.truckBtnBg, {id: "truckBtnScaleUp", scale: 1.1, transformOrigin: "center" , duration: 0.3})
         this._tl.to(selectors.truckBtnBg, {id: "truckBtnScaleDown", scale: 1, duration: 0.3})
-        this._tl.to(selectors.containerParts, {id: "containerPart", opacity: 1, duration: 0.3})
+        this._tl.to(selectors.containerParts, {id: "containerParts", opacity: 1, duration: 0.3})
         this._tl.to(selectors.container, {id: "container", opacity: 1, duration: 0.5})
         this._tl.to(selectors.backWheelBack2, {id: "backWheelBack2", opacity: 1, ease: "power1"})
         this._tl.to(selectors.backWheel1, {id: "backWheel1", opacity: 1, ease: "power1"}, "-=0.5")
@@ -24,7 +24,7 @@ export default class Animation {
         this._tl.to(selectors.frontWheel1, {id: "frontWheel1", opacity: 1}, "-=0.5")
         this._tl.to(selectors.frontWheel2, {id: "frontWheel2", opacity: 1}, "-=0.5")
         this._tl.to(selectors.truck, {id: "truckMovement", x: 500, opacity: 0, ease: "back"})
-        this._tl.to(selectors.shippedLabel, {id: "shippedLable", opacity: 1, duration: 1})
+        this._tl.to(selectors.shippedLabel, {id: "shippedLabel", opacity: 1, duration: 1})
 
         selectors.playBtn.addEventListener("click", () => this._tl.restart().play())
         selectors.truckBtn.addEventListener("click", () => this._tl.restart().play())
