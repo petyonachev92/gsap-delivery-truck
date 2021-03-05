@@ -5,6 +5,14 @@ export default class Animation {
     constructor() {
         this._tl = gsap.timeline().pause()
         
+        selectors.playBtn.addEventListener("click", () => this._tl.restart().play())
+        selectors.truckBtn.addEventListener("click", () => this._tl.restart().play())
+        selectors.pauseBtn.addEventListener("click", () => this._tl.pause())
+        selectors.reverseBtn.addEventListener("click", () => this._tl.reverse())
+        this.start()
+    }
+
+    async start() {
         //tweens
         this._tl.to(selectors.list, {id: "listUp", y: -150})
         this._tl.to(selectors.list, {id: "listDown", y: 0, duration: 0.3})
@@ -23,12 +31,8 @@ export default class Animation {
         this._tl.to(selectors.frontWheelsBack, {id: "frontWheelsBack", opacity: 1}, "-=0.5")
         this._tl.to(selectors.frontWheel1, {id: "frontWheel1", opacity: 1}, "-=0.5")
         this._tl.to(selectors.frontWheel2, {id: "frontWheel2", opacity: 1}, "-=0.5")
-        this._tl.to(selectors.truck, {x: -150, ease: "power1", }).to(selectors.truck, {x: 500, opacity: 0, ease: "power1", })
+        this._tl.to(selectors.truck, {x: 500, opacity: 0, ease: "back"})
         this._tl.to(selectors.shippedLabel, {opacity: 1, duration: 1})
 
-        selectors.playBtn.addEventListener("click", () => this._tl.restart().play())
-        selectors.truckBtn.addEventListener("click", () => this._tl.restart().play())
-        selectors.pauseBtn.addEventListener("click", () => this._tl.pause())
-        selectors.reverseBtn.addEventListener("click", () => this._tl.reverse())
     }
 }
